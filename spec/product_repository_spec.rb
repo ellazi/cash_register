@@ -1,6 +1,6 @@
 require_relative '../app/product_repository.rb'
 
-RSpec.describe "ProductsRepository", :product do
+RSpec.describe ProductRepository, :product do
   let(:products) do
     [
       [ "id", "product_code", "name", "price", "discount" ],
@@ -12,13 +12,9 @@ RSpec.describe "ProductsRepository", :product do
   let(:csv_path) { "spec/support/products.csv" }
   let(:repository) { ProductRepository.new(csv_path) }
 
-  it 'creates a product class' do
-    product = Product.new
-    expect(product).to be_kind_of(Product)
-  end
-
   describe "#initialize" do
     it "should initialize a products array" do
+      repository = ProductRepository.new(csv_path)
       expect(repository.products).to be_a(Array)
     end
 
