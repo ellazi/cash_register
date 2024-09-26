@@ -6,18 +6,20 @@ RSpec.describe Product do
     expect(product).to be_kind_of(Product)
   end
 
-  it 'should have a name' do
-    product = Product.new
-    expect(product).to respond_to :name
-  end
+  describe '#initialize' do
+    it 'should have a name' do
+      product = Product.new
+      expect(product).to respond_to :name
+    end
 
-  it 'should have a product_code' do
-    product = Product.new
-    expect(product).to respond_to :product_code
-  end
+    it 'should have a product_code' do
+      product = Product.new
+      expect(product).to respond_to :product_code
+    end
 
-  it 'should have a price' do
-    product = Product.new
-    expect(product).to respond_to :price
+    it 'should have a price' do
+      product = Product.new
+      expect(product).to respond_to :price
+    end
   end
 end
