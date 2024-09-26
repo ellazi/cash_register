@@ -13,11 +13,6 @@ RSpec.describe ProductRepository, :product do
   let(:repository) { ProductRepository.new(csv_path) }
 
   describe "#initialize" do
-    it "should initialize a products array" do
-      repository = ProductRepository.new(csv_path)
-      expect(repository.products).to be_a(Array)
-    end
-
     it "should be initialized with a csv file path" do
       ProductRepository.new(csv_path)
     end

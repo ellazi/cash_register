@@ -9,4 +9,10 @@ class Product
     @price = attributes[:price]
     @discount = attributes[:discount] || nil
   end
+
+  DISCOUNTS = [
+    "Buy one get one free",
+    "Fifty cents off",
+    "One third off"
+  ]
 end
