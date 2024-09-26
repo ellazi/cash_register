@@ -1,12 +1,11 @@
-require_relative 'app/product'
-require_relative 'app/product_repository'
+require_relative "router"
+require_relative "app/product_repository"
+require_relative "app/products_controller"
 
-repository = ProductRepository.new
+csv_file = File.join(__dir__, 'data/products.csv')
+product_repository = ProductRepository.new(csv_file)
+products_controller = ProductsController.new(product_repository)
 
-product1 = Product.new(product_code: 'GR1', name: 'Green Tea', price: 3.11)
-product2 = Product.new(product_code: 'SR1', name: 'Strawberries', price: 5.00)
-product3 = Product.new(product_code: 'CF1', name: 'Coffee', price: 11.23)
+router = Router.new(products_controller)
 
-repository.add(product1)
-repository.add(product2)
-repository.add(product3)
+router.run
