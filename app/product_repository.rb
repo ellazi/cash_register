@@ -1,10 +1,22 @@
+require 'csv'
+require_relative 'product'
+
 class ProductRepository
   def initialize(csv_path)
-    @csv_path = csv_path
+    @csv_path = csv_path || '../data/products.csv'
     @products = []
     @next_id = 1
     load_csv
   end
+
+  def all
+    @products
+  end
+
+  def find(id)
+    @products.find { |product| product.id == id }
+  end
+
 
   private
 
@@ -17,3 +29,4 @@ class ProductRepository
     @next_id = @products.empty? ? 1 : @products.last.id + 1
   end
 end
+

@@ -1,4 +1,4 @@
-require_relative "../app/product_repository.rb"
+require_relative '../app/product_repository.rb'
 
 RSpec.describe "ProductsRepository", :product do
   let(:products) do
@@ -18,7 +18,7 @@ RSpec.describe "ProductsRepository", :product do
   end
 
   describe "#initialize" do
-    it "should initialize an empty products array" do
+    it "should initialize a products array" do
       expect(repository.products).to be_a(Array)
     end
 
