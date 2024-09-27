@@ -2,6 +2,8 @@ require 'csv'
 require_relative 'product'
 
 class ProductRepository
+  attr_reader :products
+  
   def initialize(csv_file)
     @csv_file = csv_file
     @products = []
