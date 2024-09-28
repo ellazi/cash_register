@@ -1,27 +1,13 @@
 .product-list {
   background-color: #f1fbf7;;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 2em;
 }
-
-/* .flex-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.flex-cell {
-  width: calc(33% - 15px);
-  padding: 0.5em;
-}
-
-.flex-cell-sm {
-  width: 40px;
-  padding: 0.5em;
-} */
 
 .flex-grid {
   display: grid;
   justify-content: space-between;
-  grid-template-columns: 0.5fr 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr;
+  gap: 0.4em;
+  margin-bottom: 0.4em;
 }

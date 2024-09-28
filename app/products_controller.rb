@@ -19,6 +19,10 @@ class ProductsController
     @view.display_success(n, product)
   end
 
+  def add_frontend(product)
+    @cart << product
+  end
+
   def list
     products = @repository.all
     @view.display_products(products)

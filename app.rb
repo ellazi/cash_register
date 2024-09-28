@@ -43,7 +43,8 @@ end
 post  '/api/add' do
   content_type :json
   product_data = JSON.parse(request.body.read)
-  added_product = products_controller.add(product_data)
+  puts "Received product data: #{product_data.inspect}"
+  added_product = products_controller.add_frontend(product_data)
   status 201
   added_product.to_json
 end
