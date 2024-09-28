@@ -68,7 +68,7 @@ function ProductList() {
           </div>
         ))}
       </div>
-      {cart.length > 0 && (
+      {/* {cart.length > 0 && (
         <div className="cart">
           <h3>Your Cart</h3>
           <ul>
@@ -79,9 +79,12 @@ function ProductList() {
             ))}
           </ul>
         </div>
+      )} */}
+      {cart.length > 0 ? (
+        <Checkout cart={cart} setCart={setCart} />
+      ) : (
+        <p>Your cart is empty.</p>
       )}
-      {cart.length > 0 && <Checkout cart={cart} setCart={setCart} />}
-      <Checkout cart={cart} />
     </div>
 
   );

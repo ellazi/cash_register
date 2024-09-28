@@ -1,0 +1,11 @@
+.checkout {
+  margin-top: 4em;
+}
+
+.flex-grid-checkout {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4em;
+  margin-bottom: 0.2em;
+}

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './Checkout.css';
 
 const Checkout = ({ cart }) => {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -30,15 +31,15 @@ const Checkout = ({ cart }) => {
 
   return (
     <div className="checkout">
-      <h3>Checkout</h3>
-      {basket.length === 0 ? (
-        <p>Your cart is empty.</p>
-      ) : (
-        <div>
-          <p>Basket: {basket}</p>
-          <h4>Total Price: {totalPrice} €</h4>
-        </div>
-      )}
+      <h2>Checkout</h2>
+      <div className="flex-grid-checkout">
+        <h4>Basket</h4>
+        <h4>Total price</h4>
+      </div>
+      <div className="flex-grid-checkout">
+        <div>{basket}</div>
+        <div>{totalPrice} €</div>
+      </div>
     </div>
   );
 };
