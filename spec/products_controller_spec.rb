@@ -1,6 +1,6 @@
-require_relative '../app/products_controller'
-require_relative '../app/product_repository'
-require_relative '../app/products_view'
+require_relative '../app/controllers/products_controller'
+require_relative '../app/repositories/product_repository'
+require_relative '../app/views/products_view'
 
 RSpec.describe "ProductsController", :product do
   let(:products) do

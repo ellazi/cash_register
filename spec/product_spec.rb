@@ -1,4 +1,4 @@
-require_relative '../app/product'
+require_relative '../app/models/product'
 
 RSpec.describe Product do
   it 'creates a product class' do

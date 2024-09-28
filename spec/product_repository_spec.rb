@@ -1,4 +1,4 @@
-require_relative '../app/product_repository'
+require_relative '../app/repositories/product_repository'
 
 RSpec.describe ProductRepository, :product do
   let(:products) do
