@@ -6,6 +6,6 @@
   display: grid;
   justify-content: space-between;
   grid-template-columns: 1fr 1fr;
-  gap: 0.4em;
+  gap: 1em;
   margin-bottom: 0.2em;
 }

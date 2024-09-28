@@ -32,14 +32,20 @@ const Checkout = ({ cart }) => {
   return (
     <div className="checkout">
       <h2>Checkout</h2>
-      <div className="flex-grid-checkout">
-        <h4>Basket</h4>
-        <h4>Total price</h4>
-      </div>
-      <div className="flex-grid-checkout">
-        <div>{basket}</div>
-        <div>{totalPrice} €</div>
-      </div>
+      {basket.length === 0 ? (
+        <p>Your cart is empty</p>
+      ) : (
+        <>
+          <div className="flex-grid-checkout">
+            <h4>Basket</h4>
+            <h4>Total price</h4>
+          </div>
+          <div className="flex-grid-checkout">
+            <div>{basket}</div>
+            <div>{totalPrice} €</div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

@@ -10,10 +10,10 @@ body {
   margin: 0 auto !important;
   background-color: #348aa7;
   background-image: linear-gradient(to right top, #bce784, #88da93, #58cba2, #2cb9ad, #15a5b0, #1c95ae, #3085a6, #41759a, #4b668c, #51577c, #534869, #513b56);
-  height: 100vh;
-  width: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   padding: 1em;
-  overflow: hidden;
   color: #351f39;
   font-family: "Poppins", sans-serif;
 }
@@ -73,5 +73,11 @@ button:hover {
 @media (max-width: 960px) {
   .container {
     width: 90%;
+  }
+}
+
+@media (max-width: 720px) {
+  .container {
+    width: 100%;
   }
 }

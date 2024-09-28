@@ -68,23 +68,8 @@ function ProductList() {
           </div>
         ))}
       </div>
-      {/* {cart.length > 0 && (
-        <div className="cart">
-          <h3>Your Cart</h3>
-          <ul>
-            {cart.map((item, index) => (
-              <li key={index}>
-                {item.name} - {item.price} €
-              </li>
-            ))}
-          </ul>
-        </div>
-      )} */}
-      {cart.length > 0 ? (
-        <Checkout cart={cart} setCart={setCart} />
-      ) : (
-        <p>Your cart is empty.</p>
-      )}
+      {cart.length > 0}
+      <Checkout cart={cart} setCart={setCart} />
     </div>
 
   );
