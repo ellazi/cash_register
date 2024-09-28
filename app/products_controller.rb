@@ -28,7 +28,6 @@ class ProductsController
     @view.display_products(products)
   end
 
-  # Show cart and total price
   def checkout
     @codes_list = @cart.map { |product| product.product_code }
     basket = @codes_list.shuffle.join(', ')
@@ -36,7 +35,14 @@ class ProductsController
     @view.display_cart(basket, total_price)
   end
 
-  # Calculate total price
+  def checkout_frontend(cart)
+    @cart = cart
+    codes_list = @cart.map { |product| product.product_code }
+    basket = codes_list.shuffle.join(', ')
+    total_price = total.round(2)
+    [basket, total_price]
+  end
+
   def total
     sum1 = 0
     sum2 = 0

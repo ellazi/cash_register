@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './ProductList.css';
+import Checkout from './Checkout';
 
 function ProductList() {
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     fetch('http://127.0.0.1:9292/api/products')
@@ -28,6 +30,7 @@ function ProductList() {
       })
       .then(data => {
         console.log('Product added to cart:', data);
+        setCart(prevCart => [...prevCart, product]);
       })
       .catch(error => {
         console.error('Error adding product to cart:', error);
@@ -65,7 +68,22 @@ function ProductList() {
           </div>
         ))}
       </div>
+      {cart.length > 0 && (
+        <div className="cart">
+          <h3>Your Cart</h3>
+          <ul>
+            {cart.map((item, index) => (
+              <li key={index}>
+                {item.name} - {item.price} €
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {cart.length > 0 && <Checkout cart={cart} setCart={setCart} />}
+      <Checkout cart={cart} />
     </div>
+
   );
 }
 

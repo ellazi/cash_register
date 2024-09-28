@@ -22,7 +22,7 @@ csv_file = File.join(__dir__, 'data/products.csv')
 product_repository = ProductRepository.new(csv_file)
 products_controller = ProductsController.new(product_repository)
 
-# from product repository
+# From product repository
 get '/api/products' do
   content_type :json
   products = product_repository.all
@@ -39,7 +39,7 @@ get '/api/products/:id' do
   end
 end
 
-# from products controller
+# From products controller
 post  '/api/add' do
   content_type :json
   product_data = JSON.parse(request.body.read)
@@ -49,14 +49,11 @@ post  '/api/add' do
   added_product.to_json
 end
 
-# get '/api/list' do
-#   content_type :json
-#   products_list = products_controller.list
-#   products_list.to_json
-# end
-
 post '/api/checkout' do
   content_type :json
-  products_checkout = products_controller.checkout
-  products_checkout.to_json
+  cart_data = JSON.parse(request.body.read)
+  puts "Received product data: #{cart_data.inspect}"
+  cart_data = cart_data.map { |product_data| product_repository.find(product_data['id']) }
+  array = products_controller.checkout_frontend(cart_data)
+  { basket: array[0], total_price: array[1] }.to_json
 end
