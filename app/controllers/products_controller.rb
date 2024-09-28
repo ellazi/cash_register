@@ -1,5 +1,5 @@
-require_relative 'product'
-require_relative 'products_view'
+require_relative '../models/product'
+require_relative '../views/products_view'
 
 class ProductsController
   attr_reader :cart

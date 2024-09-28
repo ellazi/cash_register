@@ -1,6 +1,6 @@
 require_relative "router"
-require_relative "app/product_repository"
-require_relative "app/products_controller"
+require_relative "./app/repositories/product_repository"
+require_relative "./app/controllers/products_controller"
 
 csv_file = File.join(__dir__, 'data/products.csv')
 product_repository = ProductRepository.new(csv_file)

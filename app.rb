@@ -1,8 +1,8 @@
 require 'sinatra'
 require 'rack/cors'
 require 'json'
-require_relative "app/product_repository"
-require_relative "app/products_controller"
+require_relative "./app/repositories/product_repository"
+require_relative "./app/controllers/products_controller"
 
 use Rack::Cors do
   allow do
