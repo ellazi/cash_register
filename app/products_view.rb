@@ -13,6 +13,10 @@ class ProductsView
     gets.chomp.to_i
   end
 
+  def display_error
+    puts "Please enter a valid id."
+  end
+
   def ask_how_many
     puts "How many would you like to add?"
     gets.chomp.to_i

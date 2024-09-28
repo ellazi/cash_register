@@ -14,9 +14,13 @@ class ProductsController
     list
     id = @view.ask_for_product_id
     product = @repository.find(id)
-    n = @view.ask_how_many
-    n.times { @cart << product }
-    @view.display_success(n, product)
+    if product.nil?
+      @view.display_error
+    else
+      n = @view.ask_how_many
+      n.times { @cart << product }
+      @view.display_success(n, product)
+    end
   end
 
   def add_frontend(product)
