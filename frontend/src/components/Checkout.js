@@ -33,7 +33,7 @@ const Checkout = ({ cart }) => {
     <div className="checkout">
       <h2>Checkout</h2>
       {basket.length === 0 ? (
-        <p>Your cart is empty</p>
+        <p>Your cart is empty. Click the button at the right of a product to add it to your cart. Special offers might apply!</p>
       ) : (
         <>
           <div className="flex-grid-checkout">

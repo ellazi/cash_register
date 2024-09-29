@@ -1,13 +1,14 @@
 .product-list {
   background-color: #f1fbf7;;
   border-radius: 5px;
-  padding: 2em;
+  padding: 1em 2em 2em 2em;
+
 }
 
 .flex-grid {
   display: grid;
   justify-content: space-between;
-  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
   gap: 0.4em;
   margin-bottom: 0.2em;
 }

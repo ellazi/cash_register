@@ -61,9 +61,9 @@ function ProductList() {
             <div>{product.id}</div>
             <div>{product.product_code}</div>
             <div>{product.name}</div>
-            <div>{product.price} €</div>
-            <div>
-              <button onClick = {() => addToCart(product)}>Add to Cart</button>
+            <div>{product.price.toFixed(2)} €</div>
+            <div className="align-right">
+              <button onClick = {() => addToCart(product)}><i class="fa-solid fa-cart-plus"></i></button>
             </div>
           </div>
         ))}
