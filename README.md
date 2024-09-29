@@ -15,11 +15,11 @@ You can:
 1- Add products to a cart
 2- Compute the total price
 
-Each checkout has:
+3- It displays a checkout with:
 - basket, with list of product codes,
-- total price expected in €.
+- total price expected in €,
 
-It:
+that:
 - scans items randomly,
 - needs to be flexible regarding pricing rules.
 
