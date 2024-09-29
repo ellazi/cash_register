@@ -44,6 +44,13 @@ RSpec.describe "ProductsController" do
     end
   end
 
+  describe "#add_frontend" do
+    it "should add a product to the cart" do
+      controller.add_frontend(repository.find(1))
+      controller.cart.include?(repository.find(1))
+    end
+  end
+
   describe "#checkout" do
     it "should have a basket with products code and total price" do
       allow_any_instance_of(Object).to receive(:gets).and_return("2", "2")
@@ -52,6 +59,26 @@ RSpec.describe "ProductsController" do
       expect(controller.cart.length).to eq(2)
       expect(controller.cart.map(&:product_code)).to eq(["SR1", "SR1"])
       expect(controller.total).to eq(10.00)
+    end
+  end
+
+  describe "#checkout_frontend" do
+    it "should return a basket with prducts codes" do
+      allow_any_instance_of(Object).to receive(:gets).and_return("1", "1")
+      controller.add
+      allow_any_instance_of(Object).to receive(:gets).and_return("2", "1")
+      controller.add
+
+      expect(controller.cart.map(&:product_code)).to eq(["GR1", "SR1"])
+    end
+
+    it "should return the total price" do
+      allow_any_instance_of(Object).to receive(:gets).and_return("1", "1")
+      controller.add
+      allow_any_instance_of(Object).to receive(:gets).and_return("2", "1")
+      controller.add
+
+      expect(controller.total).to eq(8.11)
     end
   end
 
