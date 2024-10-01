@@ -30,4 +30,4 @@ that:
 
 ## How to use it
 - you can use in CLI by launching in terminal: ruby app.rb
-- you can launch it in browser
+- you can launch it in browser (ternimal: ../cash_register rackup ; terminal: ../cash_register/frontend npm start)
